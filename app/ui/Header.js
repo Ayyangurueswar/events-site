@@ -1,6 +1,7 @@
 import logo from '@/public/next.svg';
 import Link from 'next/link';
 import Image from 'next/image';
+import Search from './Search';
 
 const Header = () => {
   return (
@@ -8,14 +9,13 @@ const Header = () => {
       <div>
         <Link href='/' className='flex gap-2 items-center'>
           <Image src={logo} alt='logo' className='w-10 h-10'/>
-          <h3 className='font-bold text-orange-700'>Nxt Events</h3>
+          <h3 className='font-bold text-orange-700 text-2xl'>Nxt Events</h3>
         </Link>
       </div>
+      <Search />
       <nav className='flex flex-row gap-8'>
-        <Link href='/'>Events</Link>
-        <Link href='/'>Events</Link>
-        <Link href='/'>Events</Link>
-        <Link href='/'>Events</Link>
+        <Link href='/events'>Events</Link>
+        <Link href='/events/add'>Add Events</Link>
       </nav>
     </header>
   )
