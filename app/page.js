@@ -1,7 +1,6 @@
 import { API_URL } from "@/config/index";
 import EventItem from "@/app/ui/EventItems";
 import Link from "next/link";
-
 async function getEvents(){
   const res = await fetch(`${API_URL}/api/all-events?populate=*&pagination[limit]=3&sort=date`, 
   {cache: 'no-store'});
@@ -27,10 +26,8 @@ export default async function Home() {
               <EventItem key={evt.id} evt={evt.attributes} />
             ))
           )}
-          <Link href='/events' legacyBehavior>
-          <a className="bg-slate-800 hover:bg-slate-700 transition-colors text-white font-bold py-2 px-4 rounded w-1/6 text-center">
+          <Link href='/events' className="bg-slate-800 hover:bg-slate-700 transition-colors text-white font-bold py-2 px-4 rounded w-1/6 text-center">
               View all events
-          </a>
         </Link>
         </div>
       </div>

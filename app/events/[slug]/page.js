@@ -18,7 +18,7 @@ async function EventPage ({params}) {
     const token = getJWT();
     return (
             <div className="w-full flex flex-col gap-6 p-4">
-                <Dashboard id={id} token={token.value}/>
+                <Dashboard id={id} token={token ? token.value: null}/>
                 <div className="flex flex-col gap-2">
                     <p>{new Date(evt.date).toLocaleDateString('en-IN')} at {evt.time}</p>
                     <h1 className="text-3xl font-bold">{evt.name}</h1>

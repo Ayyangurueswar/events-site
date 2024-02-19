@@ -6,7 +6,7 @@ import { API_URL } from "@/config";
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { dashboardAction } from "../action";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const DashboardEvents = ({evt, token}) => {
     const router = useRouter();
@@ -23,7 +23,7 @@ const DashboardEvents = ({evt, token}) => {
         if(result.status === 200) {
             await dashboardAction();
             toast.success('Event Deleted');
-            router.reload();
+            router.refresh();
         }
         else if(result.status === 401 || result.status === 403){
             toast.error('You are not allowed to delete this event');

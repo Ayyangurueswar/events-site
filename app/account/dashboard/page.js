@@ -1,9 +1,13 @@
 import { getJWT } from "@/app/action"
 import { API_URL } from "@/config";
 import DashboardEvents from "@/app/ui/DashboardEvents";
+import { redirect } from "next/navigation";
 
 const page = async () => {
   const token = getJWT();
+  if(!token){
+    redirect('/account/login');
+  }
   const res = await fetch(`${API_URL}/api/all-events/me`, {
     method: 'GET',
     headers: {
