@@ -20,6 +20,7 @@ const EditEvents = ({id, jwt}) => {
     const [image, setImage] = useState(null);
     useEffect(() =>{
         fetch(`${API_URL}/api/all-events/${id}?populate=*`).then((res) => res.json()).then((data) => {
+            console.log(data);
             setEvent({
                 name: data.data.attributes.name,
                 slug: data.data.attributes.slug,
