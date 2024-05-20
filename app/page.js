@@ -9,6 +9,7 @@ async function getEvents(){
 
 export default async function Home() {
   const events = await getEvents();
+  console.log(events);
   return (
     <div>
       <div className="showcase_wrapper mb-7">
