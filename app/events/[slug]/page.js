@@ -23,7 +23,7 @@ async function EventPage ({params}) {
                     <p>{new Date(evt.date).toLocaleDateString('en-IN')} at {evt.time}</p>
                     <h1 className="text-3xl font-bold">{evt.name}</h1>
                 </div>
-                <Image src={evt.image.data ? evt.image.data.attributes.formats.large.url : '/images/showcase.jpg'}
+                <Image src={evt.image.data ? evt.image?.data?.attributes?.formats?.large?.url : '/images/showcase.jpg'}
                 width={560} height={500} className="self-center"/>
                 <div className="flex flex-col gap-2">
                     <p className="text-xl font-bold">Performers:</p>

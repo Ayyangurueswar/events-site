@@ -15,7 +15,6 @@ const page = async () => {
     }
   }, {next: {tags: ['dashboard']}});
   const data = await res.json();
-  console.log(data);
   return (
     <div className="mx-10 my-15 flex flex-col gap-5">
       <h1 className="text-2xl font-bold">Dashboard</h1>
